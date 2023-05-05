@@ -1,0 +1,61 @@
+header {
+    font-display: whitesmoke;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+    text-shadow: 4px 4px 4px cornflowerblue;
+}
+h2, h3 {
+    color:rgb(207, 6, 230);
+    font-size: 28px;
+}
+body {
+    background: hsla(197, 100%, 63%, 1);
+
+background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+
+text-align: center;
+}
+
+#Cookies {
+    background-image: url(./img/CookieStuff.jpg);
+    background-size: center; 
+  }
+
+.img {
+    max-width: 420px;
+    max-height: 420px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    height: 200px;
+    border: solid 5px hsla(294, 100%, 55%, 1);
+    margin: 10px;
+}
+
+#box-container {
+    display: flex;
+    margin-inline: 160px;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+}
