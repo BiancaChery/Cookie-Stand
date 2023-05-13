@@ -1,12 +1,13 @@
 header {
-    font-display: whitesmoke;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 32px;
+    font-size: 30px;
+    color:hsla(197, 100%, 63%, 1);
     text-shadow: 4px 4px 4px cornflowerblue;
 }
 h2, h3 {
     color:rgb(207, 6, 230);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
 }
 body {
@@ -21,6 +22,8 @@ background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294,
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
 
 text-align: center;
+
+font-family: Arial, Helvetica, sans-serif;
 }
 
 #Cookies {
@@ -46,7 +49,7 @@ p {
 
 .box {
     height: 200px;
-    border: solid 5px hsla(294, 100%, 55%, 1);
+    border: solid 5px rgb(171, 17, 189);
     margin: 10px;
 }
 
