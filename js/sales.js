@@ -50,16 +50,26 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-for(let i = 0; i < hours.length; i++){
-    stores[i].salesPerHour = []
-    let randomInt = getRandomInt(stores[i].minCust, stores[i].maxCust)
-    let saleThisHour = randomInt * stores[i].avgCookiesPerSale
-    stores[i].salesPerHour.push(saleThisHour.toFixed(0));
+
+// for(let i = 0; i < hours.length; i++){
+//     stores[i].salesPerHour = []
+//     let randomInt = getRandomInt(stores[i].minCust, stores[i].maxCust)
+//     let saleThisHour = randomInt * stores[i].avgCookiesPerSale
+//     stores[i].salesPerHour.push(saleThisHour.toFixed(0));
+// }
+
+// console.log(stores);
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
-console.log(stores);
+
+let parentElem = document.getElementById("sales");
 
 for(let i = 0; i < stores.length; i++){
     let headingElem = document.createElement('h2');
-    headingElem.textContent = stores[i].store
+    headingElem.textContent = stores[i].store;
     parentElem.appendChild(headingElem)
 }
