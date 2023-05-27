@@ -7,11 +7,11 @@ let stores = [
     { store: "Paris", minCust: 20, maxCust: 38, avgCookiesPerSale: 2.3 },
     { store: "Lima", minCust: 2, maxCust: 16, avgCookiesPerSale: 4.6 },
 
-    newCookieStore("Seattle", 23, 65, 6.3),
-    newCookieStore("Tokyo", 3, 24, 1.2),
-    newCookieStore("Dubai", 11, 38, 3.7),
-    newCookieStore("Paris", 20, 38, 2.3),
-    newCookieStore("Lima", 2, 16, 4.6),
+    // newCookieStore("Seattle", 23, 65, 6.3),
+    // newCookieStore("Tokyo", 3, 24, 1.2),
+    // newCookieStore("Dubai", 11, 38, 3.7),
+    // newCookieStore("Paris", 20, 38, 2.3),
+    // newCookieStore("Lima", 2, 16, 4.6),
 ];
 
 let hours = ["12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"];
@@ -26,13 +26,11 @@ function getRandomInt(min, max) {
 
 for (let store of stores) {   
     store["amountBoughtPerHour"] = [];
-
     for (let hour of hours) {
         let randomInteger = getRandomInt(
             store['minCust'],
             store['maxCust']
         );
-        
         store["amountBoughtPerHour"].push(
             Math.floor(randomInteger * store["avgCookiesPerSale"])
         );
@@ -55,10 +53,16 @@ function CookieStore(name, minCust, maxCust, avgCookiesPerSale) {
   for (let h = 0; h < hours.length; h++) {
     let hourElement = document.createElement("th");
     hourElement.textContent = hours[h];
-    headingRow.appendChild(hourElement);
+    headingElement.appendChild(hourElement);
     console.log(stores);
+
+    for (let h = 0; h < hours.length; h++) {
+        let hourElement = document.createElement("th");
+        hourElement.textContent = hours[h];
+        headingElement
+    }
   }
-  
+
   for (let i = 0; i < stores.length; i++) {
     let trElement = document.createElement("tr");
     let td = document.createElement("td");
@@ -88,24 +92,36 @@ for (let store of stores) {
 }
 
 
-// Store.prototype.render = function() {
-//     let storeRow = document.createElement("tr");
-//     let storeLocationTD = document.createElement("td");
-//     storeLocationTD.textContent = this.location; 
-//     state.tableElem.appendChild(storeRow);
-// }
+CookieStore.prototype.render = function() {
+    let storeRow = document.createElement("tr");
+    let storeLocationTD = document.createElement("td");
+    storeLocationTD.textContent = this.location; 
+    state.tableElem.appendChild(storeRow);
+}
 
-// let parentElem = document.getElementById("sales");
+let parentElem = document.getElementById("sales");
 
-// for(let i = 0; i < stores.length; i++){
-//     let headingElem = document.createElement('h2');
-//     headingElem.textContent = stores[i].store;
-//     parentElem.appendChild(headingElem)
-// }
+for(let i = 0; i < stores.length; i++){
+    let headingElem = document.createElement('h2');
+    headingElem.textContent = stores[i].store;
+    parentElem.appendChild(headingElem)
+}
+console.log(stores);
 
-// console.log(stores);
-// function Store(location, hours, totals) {
-//     this.location = location;
-//     this.hour = hours;
-//     this.total = totals;
-// }
+CookieStore.prototype.render = function() {
+    let storeRow = document.getElementById("cookie-table");
+    let StoreDataElem = document.createElement("tr");
+ 
+ 
+    let storeNameElem = document.createElement("td");
+    storeNameElem.textContent = this.name;
+    StoreDataElem.appendChild(storeNameElem);
+ 
+ 
+    for (let sales of this.hourlyCookies) {
+        let salesElem = document.createElement("td");
+        salesElem.textContent = `${sales}`;
+        StoreDataElem.appendChild(salesElem);
+    }
+    storeRow.appendChild(storeDataElem);
+ } 
