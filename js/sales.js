@@ -38,6 +38,20 @@ for (let store of stores) {
 }
 console.log(stores);
 
+// let store = [
+//     { name: "Seattle", hourlySales: [346, 308, 390, 220], total: 0 },
+//     { "Tokyo", hourlySales: [8, 26, 21, 8], total : 0 },
+//     {"Dubai", hourlySales: [136, 92, 88, 103], total: 0 },
+//     {"Paris", hourlySales: [85, 73, 75, 55], total: 0 },
+//     {"Lima", hourlySales: [18, 41, 18, 55], total: 0 }
+// ];
+
+// for (let store of stores) {
+//     for (let sales of store.hourlySales) {
+//         store.total += sales;
+//     }
+// }
+
 function CookieStore(name, minCust, maxCust, avgCookiesPerSale) {
     this.name = name;
     this.minCust = minCust;
@@ -90,7 +104,6 @@ for (let store of stores) {
     totalLiElem.textContent = `Total: ${total} Cookies`
     ulElem.appendChild(totalLiElem)
 }
-
 
 CookieStore.prototype.render = function() {
     let storeRow = document.createElement("tr");
